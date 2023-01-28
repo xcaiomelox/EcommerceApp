@@ -2,18 +2,16 @@ package dominio.proprio.ecommerceapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import dominio.proprio.ecommerceapp.R
 import dominio.proprio.ecommerceapp.databinding.ItemBinding
 import dominio.proprio.ecommerceapp.model.Item
 
 class Adapter (
-    listItems: List<Item>
+    itemsList: List<Item>
 ): RecyclerView.Adapter<Adapter.ItemViewHolder>(){
 
-    private val listItems = listItems.toMutableList()
+    private val itemsList = itemsList.toMutableList()
 
     class ItemViewHolder (val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -23,7 +21,7 @@ class Adapter (
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val currentItem = listItems[position]
+        val currentItem = itemsList[position]
         with (holder.binding){
             Glide.with(itemImageView).load(currentItem.image).into(itemImageView)
             textViewTitle.text = currentItem.title
@@ -33,6 +31,6 @@ class Adapter (
 
     }
 
-    override fun getItemCount() = listItems.size
+    override fun getItemCount() = itemsList.size
 
 }
