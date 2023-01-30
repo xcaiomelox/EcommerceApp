@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 interface ItemsDao {
 
     @Query("SELECT * FROM item")
-    fun getAll() : List<Item>
+    fun getAll(): List<Item>
 
     @Insert(onConflict = REPLACE)
     fun save(item: Item)

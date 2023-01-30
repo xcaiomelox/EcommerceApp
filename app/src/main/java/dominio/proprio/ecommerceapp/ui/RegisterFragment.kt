@@ -16,6 +16,7 @@ import dominio.proprio.ecommerceapp.model.Item
 class RegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterBinding
+
     private val dao by lazy {
         AppDataBase.instance(context).itemsDao()
     }

@@ -11,7 +11,7 @@ import dominio.proprio.ecommerceapp.ui.HomeFragment
     version = 1,
     entities = [Item::class]
 )
-abstract class AppDataBase: RoomDatabase() {
+abstract class AppDataBase : RoomDatabase() {
     abstract fun itemsDao(): ItemsDao
 
 

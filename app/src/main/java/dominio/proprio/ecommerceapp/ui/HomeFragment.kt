@@ -19,6 +19,7 @@ class HomeFragment : Fragment() {
     private val dao by lazy {
         AppDataBase.instance(context).itemsDao()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,9 +32,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView(itemList: List<Item>) {
-
         val recyclerView = binding.homeRecyclerView
-        recyclerView.adapter = Adapter(itemList)
+        var itemAdapter = Adapter(
+            itemsList = itemList,
+            onItemClicked = {
+                val action = HomeFragmentDirections.actionHomeFragmentToDetailsProductFragment(it)
+                findNavController().navigate(action)
+            }
+            )
+        recyclerView.adapter = itemAdapter
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
@@ -43,4 +50,5 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_registerFragment)
         }
     }
+
 }

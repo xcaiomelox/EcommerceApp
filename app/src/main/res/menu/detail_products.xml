@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Delete" />
+    <item
+        android:id="@+id/detail_product_edit"
+        android:icon="@drawable/ic_edit"
+        android:iconTint="#D5D5D5"
+        android:title="Editar"
+        app:showAsAction="ifRoom" />
+</androidx.constraintlayout.widget.ConstraintLayout>
